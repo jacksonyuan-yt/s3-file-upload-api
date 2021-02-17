@@ -9,6 +9,28 @@ provider:
 custom:
   fileUploadBucketName: ${self:service}-bucket-${self:provider.stage}
 
+plugins:
+  - serverless-iam-roles-per-function
+
+functions:
+  s3FileUploader:
+    handler: src/upload.handler
+    name: s3-file-uploader
+    description: A lambda handler that uploads a file to an S3 bucket based on an API Gateway trigger.
+    timeout: 60 # seconds
+    memorySize: 128 # mb
+    events:
+      - http:
+          path: images
+          method: POST
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - "s3:Put*"
+        Resource: arn:aws:s3:::${self:custom.fileUploadBucketName}/*
+    environment:
+      FILE_UPLOAD_BUCKET_NAME: ${self:custom.fileUploadBucketName}
+
 resources:
   Resources:
     FileBucket:
