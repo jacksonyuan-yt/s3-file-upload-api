@@ -6,5 +6,5 @@ This repo holds the code for setting up a serverless file upload API pipeline us
 If you found this code example or video tutorial helpful, feel free to give the repo a **star** or **like/subscribe** on my YouTube channel!
 
 ### Full Video Tutorial
-* [Part 1](https://www.youtube.com/watch?v=unHBMz8c7VE)
-* [Part 2](https://www.youtube.com/watch?v=XJX0RL7dVlI)
+* [Part 1](https://www.youtube.com/watch?v=mWtnd-0Sm18)
+* [Part 2](https://www.youtube.com/watch?v=K-c0AoMmaOU)
